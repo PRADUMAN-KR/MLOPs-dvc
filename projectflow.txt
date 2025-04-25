@@ -9,3 +9,5 @@ when you run the above command it will generate the error saying the git already
 
 8.do git-commit-push to mark the this stage as a first stage data 
 9. now change the mycode.py file to add the new row in the data ,then check the changes via the dvc status
+10. commit and push the dvc and also the git
+11. again change mycode.py file and save the 3rd version of the data and again do commit and push

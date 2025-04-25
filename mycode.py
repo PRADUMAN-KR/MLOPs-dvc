@@ -15,6 +15,9 @@ df = pd.DataFrame(data)
 df_new_row = {"name":"tom","age":25,"city":"NewYork"}
 df.loc[len(df.index)] = df_new_row
 
+df_new_row = {"name":"tobey","age":26,"city":"NewYork2"}
+df.loc[len(df.index)] = df_new_row
+
 # Step 3: Set file path
 folder_path = "data"
 file_name = "people.csv"
