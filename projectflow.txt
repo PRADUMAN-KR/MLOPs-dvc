@@ -1,3 +1,10 @@
-create a clone of the repo 
-create a mycode.py file and add the code there(it will save the csv file)
-do git add ,commit, push before initializing the dvc
+1.eate a clone of the repo 
+2.eate a mycode.py file and add the code there(it will save the csv file)
+3. git add ,commit, push before initializing the dvc
+4.p install dvc
+5.w init the dvc (creates the .dvcignore, .dvc)
+6.w  add "dvc remote add -d myremote s3"
+7.w add the file you want to track using "dvc add <filename>/" dont forget the forward slash
+when you run the above command it will generate the error saying the git already tracking the file so first stop the tracking with the git and then run the dvc add <filename>/ command
+
+8.
