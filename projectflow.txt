@@ -8,3 +8,4 @@
 when you run the above command it will generate the error saying the git already tracking the file so first stop the tracking with the git and then run the dvc add <filename>/ command
 
 8.do git-commit-push to mark the this stage as a first stage data 
+9. now change the mycode.py file to add the new row in the data ,then check the changes via the dvc status

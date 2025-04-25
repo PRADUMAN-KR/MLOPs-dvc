@@ -11,6 +11,10 @@ data = {
 # Step 2: Convert to DataFrame
 df = pd.DataFrame(data)
 
+
+df_new_row = {"name":"tom","age":25,"city":"NewYork"}
+df.loc[len(df.index)] = df_new_row
+
 # Step 3: Set file path
 folder_path = "data"
 file_name = "people.csv"
@@ -19,9 +23,17 @@ file_path = os.path.join(folder_path, file_name)
 # Step 4: Ensure 'data' folder exists
 os.makedirs(folder_path, exist_ok=True)
 
-# Step 5: Check and save
-if not os.path.exists(file_path):
+if os.path.exists(file_path):
+    df_existing = pd.read_csv(file_path)
+    
+    # Find new rows not in the existing file
+    df_combined = pd.concat([df_existing, df], ignore_index=True).drop_duplicates()
+    
+    if not df_combined.equals(df_existing):
+        df_combined.to_csv(file_path, index=False)
+        print(f"✅ File '{file_path}' updated with new rows.")
+    else:
+        print(f"ℹ️ No new rows to add. File '{file_path}' remains unchanged.")
+else:
     df.to_csv(file_path, index=False)
     print(f"✅ File '{file_path}' created and saved.")
-else:
-    print(f"⚠️ File '{file_path}' already exists. No action taken.")
